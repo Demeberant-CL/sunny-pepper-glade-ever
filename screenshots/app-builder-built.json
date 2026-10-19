@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Folio — álbum de TCG Pocket",
+      "hasCanvas": false,
+      "bodyTextLen": 866,
+      "bodyTextHash": "28dd52e2c1f2fe89f31f53b50a7b31893ebb930f5ddd737d935eef8e3eb6e5f6",
+      "bodyTextPrefix": "Folio Álbum de TCG Pocket Álbum Mazos Grok La colección vive en ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Folio — álbum de TCG Pocket",
+      "hasCanvas": false,
+      "bodyTextLen": 727,
+      "bodyTextHash": "a60db64bf35cd98a95c908cffe56a74457458861c6b9d5b5eb2151333ba933bc",
+      "bodyTextPrefix": "Folio Álbum Tu colección 188 únicas · 303 copias · 102 ex · 116 ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+
+  --color-ink: #14120e;
+  --color-ink-2: #1e1b16;
+  --color-panel: #2a261f;
+  --color-cream: #f3ead7;
+  --color-cream-dim: #cbbfa6;
+  --color-mute: #8f846f;
+  --color-gold: #e0a84a;
+  --color-foil: #9a6b28;
+  --color-paper: #f4ecdc;
+  --color-paper-ink: #231e16;
+
+  --shadow-hair: 0 0 0 1px rgba(243, 234, 215, 0.1);
+  --shadow-hair-strong: 0 0 0 1px rgba(224, 168, 74, 0.55);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    background: var(--color-ink);
+    color: var(--color-cream);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    min-height: 100dvh;
+    background: var(--color-ink);
+    color: var(--color-cream);
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-gold) 50%, transparent);
+    color: var(--color-ink);
+  }
+}
+
+@layer components {
+  .app-shell {
+    min-height: 100dvh;
+  }
+
+  .aspect-card {
+    aspect-ratio: 63 / 88;
+  }
+
+  a.btn {
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 2.75rem;
+    padding-inline: 1rem;
+    border-radius: 999px;
+    font-weight: 500;
+    transition: filter 160ms ease, background-color 160ms ease, color 160ms ease;
+  }
+
+  .btn:disabled {
+    cursor: default;
+    opacity: 0.45;
+  }
+
+  .btn-gold {
+    background: var(--color-gold);
+    color: var(--color-ink);
+  }
+
+  .btn-gold:hover:not(:disabled) {
+    filter: brightness(1.06);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-cream);
+    box-shadow: var(--shadow-hair);
+  }
+
+  .btn-ghost:hover:not(:disabled) {
+    background: var(--color-panel);
+  }
+
+  .btn-quiet {
+    background: transparent;
+    color: var(--color-cream-dim);
+  }
+
+  .btn-quiet:hover:not(:disabled) {
+    color: var(--color-cream);
+  }
+
+  .field {
+    min-height: 2.75rem;
+    width: 100%;
+    border-radius: 999px;
+    background: var(--color-ink-2);
+    color: var(--color-cream);
+    box-shadow: var(--shadow-hair);
+    padding-inline: 1rem;
+  }
+
+  .field::placeholder {
+    color: var(--color-mute);
+  }
+
+  .field:focus {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+
+  .dock {
+    padding-bottom: max(0.4rem, env(safe-area-inset-bottom));
+  }
+
+  .card-tile {
+    content-visibility: auto;
+    contain-intrinsic-size: 140px 200px;
+  }
+}
+
+@media (min-width: 48rem) {
+  .app-shell {
+    display: grid;
+    grid-template-columns: 15rem minmax(0, 1fr);
+  }
+
+  .deck-split {
+    display: grid;
+    grid-template-columns: 18rem minmax(0, 1fr);
+    min-height: 0;
+    height: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
